@@ -6,8 +6,6 @@ function inputStringaPrompt() {
     return input;
 }
 
-console.log(input);
-
 // controllo della stringa d'input, utilizziamo una funzione 
 // ritorna "NaN"
 function isAstring(testo) {
@@ -15,20 +13,38 @@ function isAstring(testo) {
     var possibleNumber = parseInt(testo);
 
     return Number.isNaN(possibleNumber);
-}
-//grazie Florian
+} /*grazie Florian*/
 
 // controlliamo se la stringa inserita è palindroma attraverso una funzione isPalindrome()
+function isPalindrome(stringaSePalindroma) {
 
-// visualizziamo l'output in console stringa e se è palindroma
+    // utilizzo 2 cicli per scandire le due stringhe mi fermo se i caratteri confrontati non corrispondono o a metà della stringa
+    for (var i = 0; i < stringaSePalindroma.length / 2; i++) {
 
+        // valuto se la stringa non è palindroma e esco dal ciclo
+        if (stringaSePalindroma[i] !== stringaSePalindroma[stringaSePalindroma - i]) {
+            console.log("la stringa inserita non è palindroma");
+            // setto i alla lunghezza della stringa per uscire dal ciclo o utilizzo break;
+            return true;
+        }
+    }
+
+}
+
+/********************************************************************************************************************************************/
 //corpo del programma
 var stringaInput = inputStringaPrompt();
 
-if (isAstring(stringaInput)) {
+if (isAstring(stringaInput) && isPalindrome(stringaInput)) { /*caso sia una stringa palindroma */
+    console.log("la stringa" + stringaInput + "è palindroma");
+debugger
+} else if (isPalindrome(stringaInput) && (!isPalindrome(stringaInput))) { /* caso sia una stringa ma non palindroma*/ 
+    console.log("la stringa" + stringaInput + "non è palindroma");
 
 } else {
-    console.log("si prega di inserire una stringa");
+    consol.log("si prega di inserire una stringa"); /*caso non sia una stringa*/
 }
 
 
+//proviamo stringhe palindrome non e numeri
+//"i topi non avevano nipoti",  , 
