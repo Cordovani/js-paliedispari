@@ -66,7 +66,7 @@ if (isAstring(numeroUtente)) {
 // output per testare
 console.log("il numero immmesso è: " + numeroUtente);
 console.log("la puntata immessa è: " + pariOdispari);
-console.log("il numemro generato è: " + numeroComputer);
+console.log("il numero generato è: " + numeroComputer);
 console.log("la somma è: " + sum);
 console.log(isEven(sum));
 

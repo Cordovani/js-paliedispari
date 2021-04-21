@@ -21,13 +21,17 @@ function isPalindrome(stringaSePalindroma) {
     // utilizzo 2 cicli per scandire le due stringhe mi fermo se i caratteri confrontati non corrispondono o a metà della stringa
     for (var i = 0; i < stringaSePalindroma.length / 2; i++) {
 
+        var lunghezzaParola = stringaSePalindroma.length;
+
         // valuto se la stringa non è palindroma e esco dal ciclo
-        if (stringaSePalindroma[i] !== stringaSePalindroma[stringaSePalindroma - i]) {
-            console.log("la stringa inserita non è palindroma");
+        if (stringaSePalindroma[i] !== stringaSePalindroma[lunghezzaParola - i - 1]) {
+            // console.log("la stringa inserita non è palindroma");
             // setto i alla lunghezza della stringa per uscire dal ciclo o utilizzo break;
-            return true;
+            return false;
         }
     }
+
+    return true;
 
 }
 
@@ -36,10 +40,10 @@ function isPalindrome(stringaSePalindroma) {
 var stringaInput = inputStringaPrompt();
 
 if (isAstring(stringaInput) && isPalindrome(stringaInput)) { /*caso sia una stringa palindroma */
-    console.log("la stringa" + stringaInput + "è palindroma");
-debugger
-} else if (isPalindrome(stringaInput) && (!isPalindrome(stringaInput))) { /* caso sia una stringa ma non palindroma*/ 
-    console.log("la stringa" + stringaInput + "non è palindroma");
+    console.log("la stringa " + stringaInput + " è palindroma");
+
+} else if (isAstring(stringaInput) && (!isPalindrome(stringaInput))) { /* caso sia una stringa ma non palindroma*/ 
+    console.log("la stringa " + stringaInput + " non è palindroma");
 
 } else {
     consol.log("si prega di inserire una stringa"); /*caso non sia una stringa*/
